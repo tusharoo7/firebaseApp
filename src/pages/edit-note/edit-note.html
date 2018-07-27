@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>
+          Firebase Crud Operation Using Ionic
+        </ion-title>
+    <ion-title>Edit Profile of :{{note?.username}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Title</ion-label>
+    <ion-input [(ngModel)]="note.username" placeholder="Please Enter Your Username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input [(ngModel)]="note.email" placeholder="Please Enter your Email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Profile Picture</ion-label>
+    <ion-input [(ngModel)]="note.profile_picture" placeholder="Please Enter your Image Url"></ion-input>
+  </ion-item>
+  <button ion-button block clear (click)="updateNote(note)">Save</button>
+  <button ion-button block clear (click)="removeNote(note)">Delete</button>
+</ion-content>

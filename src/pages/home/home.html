@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Firebase Crud Operation Using Ionic
+    </ion-title>
+
+    <ion-buttons end>
+      <button navPush="AddNotePage" ion-button>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!-- <ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      User Details
+    </ion-list-header>
+    <ion-item *ngFor="let note of items | async"
+    detail-push navPush="EditNotePage" [navParams]="{note:note}">
+      {{note.email}}
+    </ion-item>
+    
+  </ion-list>
+</ion-content> -->
+
+
+
+<ion-content class="cards-bg social-cards">
+
+<ion-card *ngFor="let note of items | async"
+detail-push navPush="EditNotePage" [navParams]="{note:note}">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="{{note.profile_picture}}">
+    </ion-avatar>
+    <h2>{{note.username}}</h2>
+    <p>{{note.email}}</p>
+  </ion-item>
+
+  <img src="{{note.profile_picture}}">
+
+  <ion-card-content>
+    <p>{{note.username}}</p>
+    <p>{{note.email}}</p>
+  </ion-card-content>
+
+  <ion-row>
+   
+  </ion-row>
+
+</ion-card>
+
+
+
+
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>
+
+  
